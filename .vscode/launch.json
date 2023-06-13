@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Parth/Documents/GitHub/CPP Calculator",
-      "program": "c:/Users/Parth/Documents/GitHub/CPP Calculator/build/Debug/outDebug",
+      "cwd": "d:/Users/Parth/Documents/GitHub/CPP-Calculator",
+      "program": "d:/Users/Parth/Documents/GitHub/CPP-Calculator/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
