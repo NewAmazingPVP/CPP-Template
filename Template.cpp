@@ -149,7 +149,7 @@ void fileIO() {
 // Function to demonstrate pointers and dynamic memory allocation
 void pointersAndDynamicMemory() {
     // Pointer example
-    int* ptr = nullptr;  // Declare a pointer and initialize it to nullptr
+    int* ptr = nullptr;  // Declare a pointer and initialize it to nullptr (pointer with no expiclit address)
     int value = 5;  // Declare an integer variable
     ptr = &value;  // Assign the address of 'value' to the pointer
 
