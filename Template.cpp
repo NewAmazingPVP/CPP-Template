@@ -1,6 +1,7 @@
 #include <iostream>   // Predefined functions and classes
 #include <cmath>
 #include <fstream>    // File I/O operations
+#include <memory>
 using namespace std;  // Namespace for avoiding naming conflicts between libraries
 
 // Global variables
@@ -149,7 +150,7 @@ void fileIO() {
 // Function to demonstrate pointers and dynamic memory allocation
 void pointersAndDynamicMemory() {
     // Pointer example
-    int* ptr = nullptr;  // Declare a pointer and initialize it to nullptr (pointer with no expiclit address)
+    int* ptr = nullptr;  // Declare a pointer and initialize it to nullptr (pointer with no explicit address)
     int value = 5;  // Declare an integer variable
     ptr = &value;  // Assign the address of 'value' to the pointer
 
@@ -163,6 +164,22 @@ void pointersAndDynamicMemory() {
     cout << "Dynamic Pointer: " << dynamicPtr << endl;
     cout << "Dereferenced Dynamic Pointer: " << *dynamicPtr << endl;
 
+    // Unique pointer example (unique pointer automatically deletes when out of scope)
+    unique_ptr<int> uniquePtr(new int);  // Create a unique pointer and allocate memory for an integer
+    *uniquePtr = 20;  // Store a value in the dynamically allocated memory
+    cout << "Unique Pointer: " << uniquePtr.get() << endl;
+    cout << "Dereferenced Unique Pointer: " << *uniquePtr << endl;
+
+    // Shared pointer example (shared pointer automatically deletes when out of scope)
+    shared_ptr<int> sharedPtr = make_shared<int>(30);  // Create a shared pointer and allocate memory for an integer
+    cout << "Shared Pointer: " << sharedPtr.get() << endl;
+    cout << "Dereferenced Shared Pointer: " << *sharedPtr << endl;
+
+    // Weak pointer example
+    weak_ptr<int> weakPtr = sharedPtr;  // Create a weak pointer from the shared pointer
+    cout << "Weak Pointer Expired: " << weakPtr.expired() << endl;  // Check if the weak pointer is expired
+
     // Deallocate the dynamically allocated memory to avoid memory leaks
-    delete dynamicPtr;
+    delete dynamicPtr;  // Remove this line when using smart pointers
 }
+
